@@ -1,7 +1,6 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "compil": "node-sass sass -o css",
@@ -23,7 +22,15 @@
     "autoprefixer": "^9.7.6",
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^7.1.0"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yassineuuu/Fill-rouge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yassineuuu/Fill-rouge/issues"
+  },
+  "homepage": "https://github.com/yassineuuu/Fill-rouge#readme",
+  "description": ""
 }
-
-
