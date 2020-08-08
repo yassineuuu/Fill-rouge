@@ -5,11 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shotcut icon" type="image/x-icon" href="img/logo.png"  height="0" width="100">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+    <script src="https://kit.fontawesome.com/03aea6aaf2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 <body>
+
+            <!-------------------- POPUP ----------------------->
+
+    <div class="popup">
+        <div class="log">
+            <label for="mail"><h3>E-mail</h3></label>
+            <input type="email" name="mail" id="mail">
+            <label for="pass"><h3>Password</h3></label>
+            <input type="password" name="pass" id="pass">
+            <input type="submit" value="Login">
+        </div>
+        <div class="overlay" id="overlay"></div>
+    </div>
 
         <!-------------------- HEADER ----------------------->
 
@@ -23,11 +36,11 @@
            
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#s2">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
             
-            
+            <button id="login"><i class="fas fa-user-lock"></i> Se Connecter</button>
             
         </nav>
 
@@ -35,17 +48,17 @@
 
         <div class="para">
             <p>YOU ARE MOST DELIGHTFULLY WELCOME TO MY PORTFOLIO</p>
-            <div class="button">ABOUT ME!</div>
+            <div class="button"><a href="#s1">ABOUT ME!</a></div>
             </div>
     </header>
 
 
-    <!---------------------------------------- MAIN SAECTION---------------------------------------------->
+    <!---------------------------------------- MAIN SECTION---------------------------------------------->
 
     <main>
 
         <!-------------------- SECTION1 ----------------------->
-        <section class="aboutme">
+        <section id='s1' class="aboutme">
 
             <!-------------------- ABOUT ME ----------------------->
 
@@ -89,7 +102,7 @@
         <!-------------------- SECTION2 ----------------------->
 
 
-        <section class="projects">
+        <section id='s2' class="projects">
                     <!-------------------- my projects ----------------------->
 
             <h1>MY PROJECTS</h1>
@@ -153,16 +166,16 @@
         <!---------------------------------------- FOOTER---------------------------------------------->
 
 
-    <footer>
+    <footer  id='contact'>
 
                 <!-------------------- FOOTER SECTION1 ----------------------->
         <h1>CONTACT</h1>
         <section class="contact">
             <div class="social">
-                <div><img src="img/Gmail_29991.png" alt="">yassinemakhlouk49@gmail.com</div>
-                <div><img src="img/phone-symbol-of-an-auricular-inside-a-circle_icon-icons.com_56478.svg" alt="">+212695518892</div>
-                <div><img src="img/fb_icon-icons.com_66689.png" alt="">Yà Cine</div>
-                <div><img src="img/linkedin_icon-icons.com_53609.png" alt=""><a href="https://www.linkedin.com/in/yassine-makhlouk-57359b1a1">Yassine MAKHLOUK</a></div>
+                <div class="soc"><img src="img/Gmail_29991.png" alt=""><a href='mailto:yassinemakhlouk49@gmail.com'>yassinemakhlouk49@gmail.com</a></div>
+                <div class="soc"><img src="img/phone-symbol-of-an-auricular-inside-a-circle_icon-icons.com_56478.svg" alt="">+212695518892</div>
+                <div class="soc"><img src="img/fb_icon-icons.com_66689.png" alt="">Yà Cine</div>
+                <div class="soc"><img src="img/linkedin_icon-icons.com_53609.png" alt=""><a href="https://www.linkedin.com/in/yassine-makhlouk-57359b1a1">Yassine MAKHLOUK</a></div>
             </div>
             <div class="inputs">
                 <input type="text" name="Name" id="name" placeholder="Name">
@@ -177,8 +190,9 @@
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">About me</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#s1">About me</a></li>
+                <li><a href="#s2">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
 
@@ -188,7 +202,7 @@
 
         <!---------------------------------------- SCRIPT---------------------------------------------->
 
-    <script src="js/app.js"></script>
+    <script src="javascript/LoginPopp.js"></script>
 
 
 </body>
