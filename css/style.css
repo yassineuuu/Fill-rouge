@@ -69,7 +69,6 @@ body {
     width: 100vw; }
     body header nav {
       margin: 1rem 0;
-      padding: 0 3rem;
       width: 90vw;
       display: flex;
       justify-content: space-between;
@@ -77,23 +76,80 @@ body {
       body header nav img {
         width: 15%;
         max-width: 70px; }
+      body header nav .humberger {
+        height: 3px;
+        width: 30px;
+        background-color: white;
+        z-index: 1;
+        cursor: pointer;
+        transition-duration: 0.3s; }
+        body header nav .humberger::before {
+          content: "";
+          position: relative;
+          top: -10px;
+          display: block;
+          height: 3px;
+          width: 100%;
+          background-color: inherit;
+          z-index: 1; }
+        body header nav .humberger::after {
+          content: "";
+          position: relative;
+          top: 7px;
+          display: block;
+          height: 3px;
+          width: 100%;
+          background-color: inherit;
+          z-index: 1; }
+        @media only screen and (min-width: 1024px) {
+          body header nav .humberger {
+            display: none; } }
+      body header nav .humberger.open {
+        transform: rotate(45deg); }
+        body header nav .humberger.open::before {
+          transform: rotate(90deg);
+          top: 0; }
+        body header nav .humberger.open::after {
+          display: none; }
       body header nav ul {
-        display: none; }
+        position: absolute;
+        top: -30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        flex-direction: column;
+        background-color: black;
+        border: 1px solid white;
+        transition-duration: 0.3s; }
         @media only screen and (min-width: 1024px) {
           body header nav ul {
-            width: 60%;
-            max-width: 680px;
+            position: initial;
+            transform: translate(0%, 0%);
             display: flex;
+            border: none;
+            width: 60%;
+            background-color: transparent;
+            max-width: 680px;
+            flex-direction: row;
             justify-content: space-between; } }
-        body header nav ul li a {
-          text-decoration: none;
-          color: white;
-          font-size: 1.5rem; }
+        body header nav ul li {
+          padding: .5rem 0; }
+          body header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 3.5rem; }
+            body header nav ul li a:hover {
+              text-decoration: underline; }
+            @media only screen and (min-width: 1024px) {
+              body header nav ul li a {
+                font-size: 1.5rem; } }
       body header nav #login {
         color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         font-family: Wicked Grit;
-        font-size: 18px;
-        border-radius: 5px;
+        font-size: 14px;
+        border-radius: 50%;
         padding: 1rem .5rem;
         background-color: transparent;
         transition-duration: 0.2s; }
@@ -101,6 +157,11 @@ body {
           transform: scale(1.1); }
         body header nav #login:active {
           transform: scale(0.9); }
+        @media only screen and (min-width: 1024px) {
+          body header nav #login {
+            border-radius: 5px;
+            font-size: 18px;
+            flex-direction: row; } }
     body header .para p {
       color: white;
       font-size: 2.5rem;
@@ -337,9 +398,12 @@ body {
       padding: 2rem; }
       body footer nav ul {
         display: flex;
-        justify-content: space-around; }
+        justify-content: space-around;
+        width: 60%;
+        margin: 0 auto; }
         body footer nav ul li {
           list-style: none; }
           body footer nav ul li a {
+            font-size: .8rem;
             color: white;
             text-decoration: none; }

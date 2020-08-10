@@ -1,6 +1,6 @@
-var popup=document.body.firstElementChild
-var login=document.getElementById('login')
-var overlay=document.getElementById('overlay')
+const popup=document.body.firstElementChild
+const login=document.getElementById('login')
+const overlay=document.getElementById('overlay')
 
 
 login.addEventListener("click", function LoginPopup(){

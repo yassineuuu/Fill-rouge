@@ -105,7 +105,7 @@ body{
         
         nav{
             margin: 1rem 0;
-            padding: 0 3rem;
+            // padding: 0 3rem;
             width: 90vw;
             display: flex;
             justify-content: space-between;
@@ -114,30 +114,95 @@ body{
                 width: 15%;
                 max-width: 70px;
             }
+        .humberger{
+            height: 3px;
+            width: 30px;
+            background-color: $white;
+            z-index: 1;
+            cursor: pointer;
+            transition-duration: 0.3s;
+            &::before{
+                content: "";
+                position: relative;
+                top: -10px;
+                display: block;
+                height: 3px;
+                width: 100%;
+                background-color: inherit;
+                z-index: 1;
+            }
+            &::after{
+                content: "";
+                position: relative;
+                top: 7px;
+                display: block;
+                height: 3px;
+                width: 100%;
+                background-color: inherit;
+                z-index: 1;
+            }
+            @include laptop{
+                display: none;
+            }
+        }
+        .humberger.open{
+            transform: rotate(45deg);
+            &::before{
+                transform: rotate(90deg);
+                top: 0;
+            }
+            &::after{
+                display: none;
+            }
+        }
        
         ul{
-            display: none;
+            // display: none;
+            position: absolute;
+            top: -30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            flex-direction: column;
+            background-color: $black;
+            border: 1px solid $white;
+            transition-duration: 0.3s;
+
                 @include laptop{
-                    width: 60%;
-                    max-width: 680px;
+                    position: initial;
+                    transform: translate(0%, 0%);
                     display: flex;
+                    border: none;
+                    width: 60%;
+                    background-color: transparent;
+                    max-width: 680px;
+                    flex-direction: row;
                     justify-content: space-between;
                 }
             li{
-
+                padding: .5rem 0;
                 a{
                     text-decoration: none;
                     color: $white;
-                    font-size: 1.5rem;
+                    font-size: 3.5rem;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                    @include laptop{
+                        font-size: 1.5rem;
+                    }
+                   
                     }
                 }
             
             }
             #login{
                 color: $white;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 font-family: Wicked Grit;
-                font-size: 18px;
-                border-radius: 5px;
+                font-size: 14px;
+                border-radius: 50%;
                 padding: 1rem .5rem;
                 background-color: transparent;
                 // border: none;
@@ -147,6 +212,11 @@ body{
                 }
                 &:active{
                     transform: scale(0.9);
+                }
+                @include laptop {
+                    border-radius: 5px;
+                    font-size: 18px;
+                    flex-direction: row;
                 }
             }
 
@@ -450,9 +520,12 @@ body{
             ul{
                 display: flex;
                 justify-content: space-around;
+                width: 60%;
+                margin: 0 auto;
                 li{
                     list-style: none;
                     a{
+                        font-size: .8rem;
                         color: $white;
                         text-decoration: none;
                     }
