@@ -8,7 +8,7 @@ hum.addEventListener('click', ()=>{
         hum.classList.add('open');
         humOpen=true;
         menu.style.top="24%";
-        menu.style.padding="3rem 1rem";
+        menu.style.padding="3rem 1rem 2rem";
     }else{
         hum.classList.remove('open');
         menu.style.top="-30%";

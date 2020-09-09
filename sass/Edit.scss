@@ -1,0 +1,187 @@
+$black:black;
+$white:white;
+$colorR:#ff3300;
+$colorsub1:#ff3300;
+$colorsub2:#255784;
+
+@import "./mixin";
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    overflow-x: hidden;
+    font-family: Wicked Grit;
+    header{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        // flex-wrap: wrap;
+        align-items: center;
+        justify-items: center;
+        background: url(../img/bg4.jpg);
+        background-color: black;
+        background-size: cover;
+        background-position: center;
+        width: 100vw;
+        
+        nav{
+            z-index: 5;
+            margin: 1rem 0;
+            // padding: 0 3rem;
+            width: 90vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            #img{
+                margin-top: 2rem;
+                width: 7%;
+                border-radius: 50%;
+                min-width: 100px;
+            }
+        .humberger{
+            height: 3px;
+            width: 30px;
+            background-color: $white;
+            z-index: 1;
+            cursor: pointer;
+            transition-duration: 0.3s;
+            &::before{
+                content: "";
+                position: relative;
+                top: -10px;
+                display: block;
+                height: 3px;
+                width: 100%;
+                background-color: inherit;
+                z-index: 1;
+            }
+            &::after{
+                content: "";
+                position: relative;
+                top: 7px;
+                display: block;
+                height: 3px;
+                width: 100%;
+                background-color: inherit;
+                z-index: 1;
+            }
+            @include laptop{
+                display: none;
+            }
+        }
+        .humberger.open{
+            transform: rotate(45deg);
+            &::before{
+                transform: rotate(90deg);
+                top: 0;
+            }
+            &::after{
+                display: none;
+            }
+        }
+       
+        ul{
+            // display: none;
+            position: absolute;
+            top: -30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            flex-direction: column;
+            background-color: $black;
+            border: 1px solid $white;
+            transition-duration: 0.3s;
+
+                @include laptop{
+                    position: initial;
+                    transform: translate(0%, 0%);
+                    display: flex;
+                    border: none;
+                    width: 60%;
+                    background-color: transparent;
+                    max-width: 680px;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+            li{
+                padding: .5rem 0;
+                
+                a{
+                    text-decoration: none;
+                    color: $white;
+                    font-size: 3.5rem;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                    @include laptop{
+                        font-size: 1.5rem;
+                    }
+
+                }   
+                }
+                li:nth-child(1) {
+                    margin-top: 4rem;
+                    @include laptop{
+                        margin-top: 0rem;
+                    }
+                  }
+                
+            
+            }
+            button{
+                padding: .5rem 1rem;
+                background-color: $colorsub1;
+                border: none;
+                text-transform: uppercase;
+                border-radius: 5px;
+                color: $white;
+                font-size: 16px;
+                font-weight: 600;
+                transition: 0.2s;
+            }
+            button:hover{
+                color: $white;
+                background-color: $colorsub1;
+                box-shadow: 0 0 10px $colorsub1, 0 0 40px $colorsub1, 0 0 80px $colorsub1,;
+            }      
+            button:active{
+                transform: scale(0.9);
+            }
+             
+
+        }
+        
+        form{
+            width: 70%;
+            max-width: 768px;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            left: 50%;
+            top: 60%;
+            transform: translate(-50%, -50%);
+            label{
+                color: $white;
+            }
+            input{
+                padding: .5rem 1rem;
+                border-radius: 5px;
+                border: none;
+            }
+            textarea{
+                padding: .5rem 1rem;
+                border-radius: 5px;
+                border: none;
+            }
+            input[type=file]{
+                background-color: $white;
+                border: none;
+                border-radius: 5px;
+                padding: .5rem;
+            }
+    }
+    
+    }
+    
+}

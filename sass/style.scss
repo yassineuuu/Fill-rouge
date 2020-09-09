@@ -1,8 +1,13 @@
 $black:black;
 $white:white;
-$colorR:#A0616A;
+$colorR:#ff3300;
 $colorsub1:#21f344;
 $colorsub2:#255784;
+$color3:#1078DC;
+$color4:#658DA7;
+$color5:#585989;
+$color6:#FF52BF;
+$color7:#FF5C5C;
 
 @import "./mixin";
 
@@ -333,94 +338,252 @@ body{
     }
 
     .projects{
-        padding-top: 2rem;
-        width: 100vw;
-        max-width: 1440px;
-        margin: 5rem auto 0;
-        text-align: center;
-        display: grid;
-        grid-template-columns: 10% 80% 10%;
-        align-items: center;
-        h1{
-            grid-column: 1/4;
-            margin-bottom: 3rem;
-        }
         
-        .left-arrow{
-            img{
-                width: 30%;
+        text-align: center;
+        margin-top: 5rem;
+        
+        .projects__list{
+            margin-top: 3rem;
+            padding: 1rem 3rem;
+            background-color: rgba(0, 0, 0, 1);
+            .projects__one{
+            @include Projects($color:$color3);
+                flex-direction: row-reverse;
+                &--title{
+                    color: $white;
+                    padding: 1rem;
+                    @include laptop {
+                        width: 80%;
+                        font-size: 2rem;
+                        margin-left: -10%;
+                        
+                    }
+                }
+                &--content1{
+                    color: $black;
+                    background-color: $white;
+                    padding: 1rem;
+                    max-width: 500px;
+                    margin: 0 auto;
+                    @include laptop {
+                        box-shadow: 0 2px 15px grey;
+                        margin-top: 10rem;
+                        border-radius: 5px;
+                        position: absolute;
+                        left: 30%;
+                        width: 40%;
+                    }
+                    @include desktop {
+                        margin-top: 5rem;
+                        padding: 3rem 2rem;
+                        left: 27%;
+                    }
+                    h3{
+                        color: $black;
+                        margin: 1rem auto 1rem;
+                    }
+                    p{
+                        margin: 1rem auto 2rem;
+                    }
+                   
+                }
+                    
+            
+                &--buttons{
+                    @include buttons($colorB:$color3)
             }
-        }
-        .right-arrow{
-            img{
-                width: 30%;
+            
             }
-        }
-        &__list{
-            justify-self: center;
-            div{
-                // background-color: $black;
-                margin: 0 auto;
-                padding: 1rem;
-                border: 1px solid $black;
-                border-radius: 15px;
-                width: 70%;
-                // min-width: 250px;
-                max-width: 700px;
-                img{
-                    width: 90%;
-                    // min-width: 250px;
-                    // max-width: 600px;
-                    margin-top: 2rem;
+            .projects__two{
+                @include Projects($color:$color4);
+                flex-direction: row;
+                &--title2{
+                    color: $white;
+                    padding: 1rem;
+                    @include laptop {
+                        width: 50%;
+                        font-size: 2rem;
+                        
+                    }
+                    @include desktop { 
+                        margin-right: 10%;
+                        text-align: right;
+                    }
+                }
+                &--content2{
+                    color: $black;
+                    background-color: $white;
+                    padding: 1rem;
+                    max-width: 500px;
+                    margin: 0 auto;
+                    @include laptop {
+                        box-shadow: 0 2px 15px grey;
+                        margin-top: 10rem;
+                        border-radius: 5px;
+                        position: absolute;
+                        left: 30%;
+                        width: 40%;
+                    }
+                    @include desktop {
+                        margin-top: 5rem;
+                        padding: 3rem 2rem;
+                        left: 42%;
+                    }
+                    h3{
+                        color: $black;
+                        margin: 1rem auto 1rem;
+                    }
+                    p{
+                        margin: 1rem auto 2rem;
+                    }
+            }
+                &--buttons2{
+                    @include buttons($colorB:$color4)
+                }
+            }
+            
+            .projects__three{
+                @include Projects($color:$color5);
+                flex-direction: row-reverse;
+                &--title3{
+                    color: $white;
+                    padding: 1rem;
+                    @include laptop {
+                        width: 80%;
+                        font-size: 2rem;
+                        margin-left: -10%;
+                        
+                    }
+                }
+                &--content3{
+                    color: $black;
+                    background-color: $white;
+                    padding: 1rem;
+                    max-width: 500px;
+                    margin: 0 auto;
+                    @include laptop {
+                        box-shadow: 0 2px 15px grey;
+                        margin-top: 10rem;
+                        border-radius: 5px;
+                        position: absolute;
+                        left: 30%;
+                        width: 40%;
+                    }
+                    @include desktop {
+                        margin-top: 5rem;
+                        padding: 3rem 2rem;
+                        left: 28%;
+                    }
+                    h3{
+                        color: $black;
+                        margin: 1rem auto 1rem;
+                    }
+                    p{
+                        margin: 1rem auto 2rem;
+                    }
+            }
+                &--buttons2{
+                    @include buttons($colorB:$color5)
+                }
+            }
+            .projects__four{
+                @include Projects($color:$color6);
+                flex-direction: row;
+                &--title4{
+                    color: $white;
+                    padding: 1rem;
+                    @include laptop {
+                        width: 60%;
+                        font-size: 2rem;
+                        
+                    }
+                    @include desktop { 
+                        margin-right: 3%;
+                        text-align: right;
+                    }
+                }
+                &--content4{
+                    color: $black;
+                    background-color: $white;
+                    padding: 1rem;
+                    max-width: 500px;
+                    margin: 0 auto;
+                    @include laptop {
+                        box-shadow: 0 2px 15px grey;
+                        margin-top: 10rem;
+                        border-radius: 5px;
+                        position: absolute;
+                        left: 30%;
+                        width: 40%;
+                    }
+                    @include desktop {
+                        margin-top: 5rem;
+                        padding: 3rem 2rem;
+                        left: 42%;
+                    }
+                    h3{
+                        color: $black;
+                        margin: 1rem auto 1rem;
+                    }
+                    p{
+                        margin: 1rem auto 2rem;
+                    }
+            }
+                &--buttons2{
+                    @include buttons($colorB:$color6)
+                }
+            }
+            .projects__five{
+                @include Projects($color:$color7);
+                flex-direction: row-reverse;
+                &--title5{
+                    color: $white;
+                    padding: 1rem;
+                    @include laptop {
+                        width: 80%;
+                        font-size: 2rem;
+                        margin-left: -10%;
+                        
+                    }
+                }
+                &--content5{
+                    color: $black;
+                    background-color: $white;
+                    padding: 1rem;
+                    max-width: 500px;
+                    margin: 0 auto;
+                    @include laptop {
+                        box-shadow: 0 2px 15px grey;
+                        margin-top: 10rem;
+                        border-radius: 5px;
+                        position: absolute;
+                        left: 30%;
+                        width: 40%;
+                    }
+                    @include desktop {
+                        margin-top: 5rem;
+                        padding: 3rem 2rem;
+                        left: 29%;
+                    }
+                    h3{
+                        color: $black;
+                        margin: 1rem auto 1rem;
+                    }
+                    p{
+                        margin: 1rem auto 2rem;
+                    }
+            }
+                &--buttons2{
+                    @include buttons($colorB:$color7)
                 }
             }
             
         }
-        .repo{
-            background-color: $white;
-            padding: .5rem;
-            border: 1px solid $black;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: .5rem auto 0;
-            width: 70%;
-            min-width: 180px;
-            border-radius: 15px;
-            box-shadow: 0 2px 8px $black;
-            &:hover{
-                background-color: grey;
-                color: $white;
-            }
-            img{
-                min-width: 20px;
-                width: 6%;
-                max-width: 30px;
-                margin: 0;
-            }
-        }
-        .review{
-            padding: .5rem;
-            border: 1px solid $white;
-            text-align: center;
-            background-color: $black;
-            color: $white;
-            margin: .5rem auto 0;
-            width: 70%;
-            min-width: 180px;
-            border-radius: 15px;
-            box-shadow: 0 2px 8px $black;
-            &:hover{
-                background-color: $white;
-                color: $black;
-            }
-        }
     }
-
     footer{
         width: 100vw;
         text-align: center;
-        margin-top: 5rem;
+        margin-top: 2rem;
         background-color: $black;
         padding-top: 2rem;
         h1{
