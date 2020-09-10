@@ -264,10 +264,12 @@
                 <div class="soc"><img src="img/linkedin_icon-icons.com_53609.png" alt=""><a href="https://www.linkedin.com/in/yassine-makhlouk-57359b1a1">Yassine MAKHLOUK</a></div>
             </div>
             <div class="inputs">
-                <input type="text" name="Name" id="name" placeholder="Name">
-                <input type="email" name="email" id="email" placeholder="e-mail">
-                <textarea type="text" name="Message" id="message" placeholder="Message"></textarea>
-                <button type="submit">SEND</button>
+                <form action="controllers/Contact.php" method="post">
+                    <input type="text" name="Name" id="name" placeholder="Name">
+                    <input type="email" name="email" id="email" placeholder="e-mail">
+                    <textarea type="text" name="Message" id="message" placeholder="Message"></textarea>
+                    <button type="submit">SEND</button>
+                </form>
             </div>
 
         </section>

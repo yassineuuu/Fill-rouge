@@ -24,9 +24,9 @@
                 <!-- <img src="../img/logo.png" alt="logo"> -->
             <div class="humberger" id="hum"></div>
                 <ul id="menu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#s2">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="Admin.php">Home</a></li>
+                    <li><a href="Admin.php#s2">Projects</a></li>
+                    <li><a href="Admin.php#contact">Contact</a></li>
                 </ul>
                 
                 <button onclick="window.location.href='../controllers/logout.php'">Logout</button>            
