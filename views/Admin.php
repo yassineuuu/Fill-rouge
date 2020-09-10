@@ -74,7 +74,7 @@
             <div class="ME">
                 <h1>WHO I'M I ?</h1>
                 <p>I'm a moroccan front-end developer, who's  Always looking for an Opportunity to code, design and  
-                    learn new things.
+                    learn new things.<br>
                     Before becoming a developer i used to study Logistics exploitation where i learned a lot  about how 
                     to control whatever you do and make it flow's smoothly and that was very helpful specialy that 
                     every time in Youcode you work with a team.
