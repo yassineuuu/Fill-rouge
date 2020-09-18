@@ -8,6 +8,11 @@
     <link rel="shotcut icon" type="image/x-icon" href="img/logo.png"  height="0" width="100">
     <script src="https://kit.fontawesome.com/03aea6aaf2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css?v=<?php echo time(); ?>">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Document</title>
 </head>
 <body>
@@ -50,7 +55,7 @@
                 <!-------------------- HEADER TEXT ----------------------->
 
         <div class="para">
-            <p>YOU ARE MOST DELIGHTFULLY WELCOME TO MY PORTFOLIO</p>
+            <p class="animate__animated animate__fadeInTopLeft">YOU ARE MOST DELIGHTFULLY WELCOME TO MY PORTFOLIO</p>
             <div class="button"><a href="#s1">ABOUT ME!</a></div>
             </div>
     </header>
@@ -68,7 +73,15 @@
 
             <div class="ME">
                 <h1>WHO I'M I ?</h1>
-                <p>I'm a moroccan front-end developer, who's  Always looking for an Opportunity to code, design and  
+                <p data-aos="fade-up"
+                    data-aos-offset="200"
+                    data-aos-delay="10"
+                    data-aos-duration="700"
+                    data-aos-easing="ease-in-out"
+                    data-aos-mirror="true"
+                    data-aos-once="false"
+                    data-aos-anchor-placement="top-center"
+                >I'm a moroccan front-end developer, who's  Always looking for an Opportunity to code, design and  
                     learn new things.<br>
                     Before becoming a developer i used to study Logistics exploitation where i learned a lot  about how 
                     to control whatever you do and make it flow's smoothly and that was very helpful specialy that 
@@ -77,7 +90,7 @@
                     games
                     
                     </p>
-                    <img src="img/undraw_reviewed_docs_neeb.svg" alt="vector">
+                    <img data-aos="slide-left" src="img/undraw_reviewed_docs_neeb.svg" alt="vector">
             </div>
 
             <!-------------------- MY SKILLS ----------------------->
@@ -86,17 +99,17 @@
             <div class="skills">
                 <h2>MY SKILLS</h2>
                 <div class="skills__img">
-                    <img src="img/html.svg" alt="">
-                    <img src="img/css.svg" alt="">
-                    <img src="img/javascript-1.jpg" alt="">
-                    <img src="img/sass.svg" alt="">
-                    <img src="img/Php.png" alt="">
-                    <img src="img/Octocat.jpg" alt="">
-                    <img src="img/git_icon_130933.svg" alt="">
-                    <img src="img/vscode.svg.png" alt="">
-                    <img src="img/PS.png" alt="">
-                    <img src="img/XD.svg.png" alt="">
-                    <img src="img/trello.png" alt="">
+                    <img data-aos="fade-up" data-aos-offset="200" data-aos-delay="70" src="img/html.svg" alt="">
+                    <img data-aos="fade-up" data-aos-offset="200" data-aos-delay="400" src="img/css.svg" alt="">
+                    <img data-aos="fade-up" data-aos-offset="200" data-aos-delay="700" src="img/javascript-1.jpg" alt="">
+                    <img data-aos="fade-up" data-aos-offset="200" data-aos-delay="1000" src="img/sass.svg" alt="">
+                    <img data-aos="fade-up" data-aos-offset="200" data-aos-delay="1300" src="img/Php.png" alt="">
+                    <img data-aos="fade-up" data-aos-offset="200" data-aos-delay="1600" src="img/Octocat.jpg" alt="">
+                    <img data-aos="fade-up" data-aos-offset="200" data-aos-delay="1900" src="img/git_icon_130933.svg" alt="">
+                    <img data-aos="fade-up" data-aos-offset="200" data-aos-delay="2200" src="img/vscode.svg.png" alt="">
+                    <img data-aos="fade-up" data-aos-offset="200" data-aos-delay="2500" src="img/PS.png" alt="">
+                    <img data-aos="fade-up" data-aos-offset="200" data-aos-delay="2800" src="img/XD.svg.png" alt="">
+                    <img data-aos="fade-up" data-aos-offset="200" data-aos-delay="3000" src="img/trello.png" alt="">
                 </div>
             </div>
         </section>
@@ -122,12 +135,12 @@
                             echo '<img src="data:img/jpeg;base64,'.base64_encode( $result['Picture'] ).'"/>';
                             ?>
                     </div>
-                    <h2 class="projects__one--title"><?php
+                    <h2 class="projects__one--title" data-aos="slide-right" data-aos-offset="200" data-aos-delay="100" ><?php
                             echo $result['Title']
                             ?>
                             </h2>
 
-                    <div class="projects__one--content projects__one--content1">
+                    <div data-aos="fade-down" data-aos-offset="200" data-aos-delay="700" class="projects__one--content projects__one--content1">
                         <h3 classe="projects__one--title2"><?php echo $result['Title'];?></h3>
                         <p><?php echo $result['Discription'];?></p>
                         <div class="projects__one--buttons">
@@ -150,9 +163,9 @@
                             echo '<img src="data:img/jpeg;base64,'.base64_encode( $result['Picture'] ).'"/>';
                             ?>
                     </div>
-                    <h2 class="projects__two--title2"><?php echo $result['Title'];?></h2>
+                    <h2 data-aos="slide-right" data-aos-offset="200" data-aos-delay="100" class="projects__two--title2"><?php echo $result['Title'];?></h2>
 
-                    <div class="projects__two--content2">
+                    <div data-aos="fade-down" data-aos-offset="200" data-aos-delay="700" class="projects__two--content2">
                         <h3 classe="projects__one--title2"><?php echo $result['Title'];?></h3>
                         <p><?php echo $result['Discription'];?></p>
                         <div class="projects__two--buttons2">
@@ -175,9 +188,9 @@
                             echo '<img src="data:img/jpeg;base64,'.base64_encode( $result['Picture'] ).'"/>';
                             ?>
                     </div>
-                    <h2 class="projects__three--title3"><?php echo $result['Title'];?></h2>
+                    <h2 data-aos="slide-right" data-aos-offset="200" data-aos-delay="100" class="projects__three--title3"><?php echo $result['Title'];?></h2>
 
-                    <div class="projects__three--content3">
+                    <div data-aos="fade-down" data-aos-offset="200" data-aos-delay="700" class="projects__three--content3">
                         <h3 classe="projects__one--title2"><?php echo $result['Title'];?></h3>
                         <p><?php echo $result['Discription'];?></p>
                         <div class="projects__three--buttons2">
@@ -200,9 +213,9 @@
                             echo '<img src="data:img/jpeg;base64,'.base64_encode( $result['Picture'] ).'"/>';
                             ?>
                     </div>
-                    <h2 class="projects__four--title4"><?php echo $result['Title'];?></h2>
+                    <h2 data-aos="slide-right" data-aos-offset="200" data-aos-delay="100" class="projects__four--title4"><?php echo $result['Title'];?></h2>
 
-                    <div class="projects__four--content4">
+                    <div data-aos="fade-down" data-aos-offset="200" data-aos-delay="700" class="projects__four--content4">
                         <h3 classe="projects__one--title4"><?php echo $result['Title'];?></h3>
                         <p><?php echo $result['Discription'];?></p>
                         <div class="projects__four--buttons2">
@@ -225,9 +238,9 @@
                             echo '<img src="data:img/jpeg;base64,'.base64_encode( $result['Picture'] ).'"/>';
                             ?>
                     </div>
-                    <h2 class="projects__five--title5"><?php echo $result['Title'];?></h2>
+                    <h2 data-aos="slide-right" data-aos-offset="200" data-aos-delay="100" class="projects__five--title5"><?php echo $result['Title'];?></h2>
 
-                    <div class="projects__five--content5">
+                    <div data-aos="fade-down" data-aos-offset="200" data-aos-delay="700" class="projects__five--content5">
                         <h3 classe="projects__one--title"><?php echo $result['Title'];?></h3>
                         <p><?php echo $result['Discription'];?></p>
                         <div class="projects__five--buttons2">
@@ -292,6 +305,11 @@
 
     <script src="javascript/LoginPopp.js"></script>
     <script src="javascript/Menu.js"></script>
+    <script src="javascript/Animation.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
 
 </body>
