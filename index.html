@@ -1,3 +1,4 @@
+<?php require_once 'models/connection.php'?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shotcut icon" type="image/x-icon" href="img/logo.png"  height="0" width="100">
     <script src="https://kit.fontawesome.com/03aea6aaf2.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=<?php echo time(); ?>">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Document</title>
 </head>
 <body>
@@ -14,12 +20,14 @@
             <!-------------------- POPUP ----------------------->
 
     <div class="popup">
-        <div class="log">
-            <label for="mail"><h3>E-mail</h3></label>
-            <input type="email" name="mail" id="mail">
-            <label for="pass"><h3>Password</h3></label>
-            <input type="password" name="pass" id="pass">
-            <input type="submit" value="Login">
+        <div>
+            <form class="log" action="controllers/login.php" method='POST'>
+                <label for="mail"><h3>E-mail</h3></label>
+                <input type="email" name="email" id="mail">
+                <label for="pass"><h3>Password</h3></label>
+                <input type="password" name="pass" id="pass">
+                <input type="submit" value="Login">
+            </form>
         </div>
         <div class="overlay" id="overlay"></div>
     </div>
@@ -47,7 +55,7 @@
                 <!-------------------- HEADER TEXT ----------------------->
 
         <div class="para">
-            <p>YOU ARE MOST DELIGHTFULLY WELCOME TO MY PORTFOLIO</p>
+            <p class="animate__animated animate__fadeInTopLeft">YOU ARE MOST DELIGHTFULLY WELCOME TO MY PORTFOLIO</p>
             <div class="button"><a href="#s1">ABOUT ME!</a></div>
             </div>
     </header>
@@ -65,8 +73,16 @@
 
             <div class="ME">
                 <h1>WHO I'M I ?</h1>
-                <p>I'm a moroccan front-end developer, who's  Always looking for an Opportunity to code, design and  
-                    learn new things.
+                <p data-aos="fade-up"
+                    data-aos-offset="200"
+                    data-aos-delay="10"
+                    data-aos-duration="700"
+                    data-aos-easing="ease-in-out"
+                    data-aos-mirror="true"
+                    data-aos-once="false"
+                    data-aos-anchor-placement="top-center"
+                >I'm a moroccan front-end developer, who's  Always looking for an Opportunity to code, design and  
+                    learn new things.<br>
                     Before becoming a developer i used to study Logistics exploitation where i learned a lot  about how 
                     to control whatever you do and make it flow's smoothly and that was very helpful specialy that 
                     every time in Youcode you work with a team.
@@ -74,7 +90,7 @@
                     games
                     
                     </p>
-                    <img src="img/undraw_reviewed_docs_neeb.svg" alt="vector">
+                    <img data-aos="slide-left" src="img/undraw_reviewed_docs_neeb.svg" alt="vector">
             </div>
 
             <!-------------------- MY SKILLS ----------------------->
@@ -83,17 +99,17 @@
             <div class="skills">
                 <h2>MY SKILLS</h2>
                 <div class="skills__img">
-                    <img src="img/html.svg" alt="">
-                    <img src="img/css.svg" alt="">
-                    <img src="img/javascript-1.jpg" alt="">
-                    <img src="img/sass.svg" alt="">
-                    <img src="img/Php.png" alt="">
-                    <img src="img/Octocat.jpg" alt="">
-                    <img src="img/git_icon_130933.svg" alt="">
-                    <img src="img/vscode.svg.png" alt="">
-                    <img src="img/PS.png" alt="">
-                    <img src="img/XD.svg.png" alt="">
-                    <img src="img/trello.png" alt="">
+                    <img data-aos="fade-up" data-aos-offset="200" data-aos-delay="70" src="img/html.svg" alt="">
+                    <img data-aos="fade-up" data-aos-offset="200" data-aos-delay="400" src="img/css.svg" alt="">
+                    <img data-aos="fade-up" data-aos-offset="200" data-aos-delay="700" src="img/javascript-1.svg" alt="">
+                    <img data-aos="fade-up" data-aos-offset="200" data-aos-delay="1000" src="img/sass.svg" alt="">
+                    <img data-aos="fade-up" data-aos-offset="200" data-aos-delay="1300" src="img/Php.svg" alt="">
+                    <img data-aos="fade-up" data-aos-offset="200" data-aos-delay="1600" src="img/Octocat.svg" alt="">
+                    <img data-aos="fade-up" data-aos-offset="200" data-aos-delay="1900" src="img/git_icon_130933.svg" alt="">
+                    <img data-aos="fade-up" data-aos-offset="200" data-aos-delay="2200" src="img/vscode.svg" alt="">
+                    <img data-aos="fade-up" data-aos-offset="200" data-aos-delay="2500" src="img/PS.svg" alt="">
+                    <img data-aos="fade-up" data-aos-offset="200" data-aos-delay="2700" src="img/XD.svg" alt="">
+                    <img data-aos="fade-up" data-aos-offset="200" data-aos-delay="2900" src="img/trello.svg" alt="">
                 </div>
             </div>
         </section>
@@ -111,16 +127,25 @@
                 <div class="projects__one">
                     
                     <div class="projects__one--image">
-                        <img src="img/smartmockups_ka2q7c93.png" alt="">
+                        <!-- <img src="../img/smartmockups_ka2q7c93.png" alt=""> -->
+                        <?php
+                            $sql = "SELECT * FROM `projects` WHERE `id`='1'";
+                            $sth = $Conn->query($sql);
+                            $result=mysqli_fetch_array($sth);
+                            echo '<img src="data:img/jpeg;base64,'.base64_encode( $result['Picture'] ).'"/>';
+                            ?>
                     </div>
-                    <h2 class="projects__one--title">Corona Hero</h2>
+                    <h2 class="projects__one--title" data-aos="slide-right" data-aos-offset="200" data-aos-delay="100" ><?php
+                            echo $result['Title']
+                            ?>
+                            </h2>
 
-                    <div class="projects__one--content projects__one--content1">
-                        <h3 classe="projects__one--title2">Corona Hero</h3>
-                        <p>Sit amet consectetur Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, dignissimos. adipisicing elit. Quae ipsam amet iste magnam sunt est labore sit nostrum velit earum!</p>
+                    <div data-aos="fade-down" data-aos-offset="200" data-aos-delay="700" class="projects__one--content projects__one--content1">
+                        <h3 classe="projects__one--title2"><?php echo $result['Title'];?></h3>
+                        <p><?php echo $result['Discription'];?></p>
                         <div class="projects__one--buttons">
-                            <a href="#">GitHub repo</a>
-                            <a href="#" class="review"><h4>Quick review</h4></a>
+                            <a href="<?php echo $result['Github_link'];?>">GitHub repo</a>
+                            <a href="<?php echo $result['Review_link'];?>" class="review"><h4>Quick review</h4></a>
                         </div>
 
                     </div>
@@ -130,16 +155,22 @@
                 <div class="projects__two">
                     
                     <div class="projects__one--image">
-                        <img src="img/smartmockHyperNova.png" alt="">
+                        <!-- <img src="../img/smartmockHyperNova.png" alt=""> -->
+                        <?php
+                            $sql = "SELECT * FROM `projects` WHERE `id`='2'";
+                            $sth = $Conn->query($sql);
+                            $result=mysqli_fetch_array($sth);
+                            echo '<img src="data:img/jpeg;base64,'.base64_encode( $result['Picture'] ).'"/>';
+                            ?>
                     </div>
-                    <h2 class="projects__two--title2">HyperNova</h2>
+                    <h2 data-aos="slide-right" data-aos-offset="200" data-aos-delay="100" class="projects__two--title2"><?php echo $result['Title'];?></h2>
 
-                    <div class="projects__two--content2">
-                        <h3 classe="projects__one--title2">HyperNova</h3>
-                        <p>Sit amet consectetur Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, dignissimos. adipisicing elit. Quae ipsam amet iste magnam sunt est labore sit nostrum velit earum!</p>
+                    <div data-aos="fade-down" data-aos-offset="200" data-aos-delay="700" class="projects__two--content2">
+                        <h3 classe="projects__one--title2"><?php echo $result['Title'];?></h3>
+                        <p><?php echo $result['Discription'];?></p>
                         <div class="projects__two--buttons2">
-                            <a href="#">GitHub repo</a>
-                            <a href="#" class="review"><h4>Quick review</h4></a>
+                            <a href="<?php echo $result['Github_link'];?>">GitHub repo</a>
+                            <a href="<?php echo $result['Review_link'];?>" class="review"><h4>Quick review</h4></a>
                         </div>
 
                     </div>
@@ -149,16 +180,22 @@
                 <div class="projects__three">
                     
                     <div class="projects__one--image">
-                        <img src="img/smartmockchallenge4.png" alt="">
+                        <!-- <img src="../img/smartmockchallenge4.png" alt=""> -->
+                        <?php
+                            $sql = "SELECT * FROM `projects` WHERE `id`='3'";
+                            $sth = $Conn->query($sql);
+                            $result=mysqli_fetch_array($sth);
+                            echo '<img src="data:img/jpeg;base64,'.base64_encode( $result['Picture'] ).'"/>';
+                            ?>
                     </div>
-                    <h2 class="projects__three--title3">Fylo Challenge</h2>
+                    <h2 data-aos="slide-right" data-aos-offset="200" data-aos-delay="100" class="projects__three--title3"><?php echo $result['Title'];?></h2>
 
-                    <div class="projects__three--content3">
-                        <h3 classe="projects__one--title2">Fylo Challenge</h3>
-                        <p>Sit amet consectetur Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, dignissimos. adipisicing elit. Quae ipsam amet iste magnam sunt est labore sit nostrum velit earum!</p>
+                    <div data-aos="fade-down" data-aos-offset="200" data-aos-delay="700" class="projects__three--content3">
+                        <h3 classe="projects__one--title2"><?php echo $result['Title'];?></h3>
+                        <p><?php echo $result['Discription'];?></p>
                         <div class="projects__three--buttons2">
-                            <a href="#">GitHub repo</a>
-                            <a href="#" class="review"><h4>Quick review</h4></a>
+                            <a href="<?php echo $result['Github_link'];?>">GitHub repo</a>
+                            <a href="<?php echo $result['Review_link'];?>" class="review"><h4>Quick review</h4></a>
                         </div>
 
                     </div>
@@ -168,16 +205,22 @@
                 <div class="projects__four">
                     
                     <div class="projects__one--image">
-                        <img src="img/smartmockchallenge5.png" alt="">
+                        <!-- <img src="../img/smartmockchallenge5.png" alt=""> -->
+                        <?php
+                            $sql = "SELECT * FROM `projects` WHERE `id`='4'";
+                            $sth = $Conn->query($sql);
+                            $result=mysqli_fetch_array($sth);
+                            echo '<img src="data:img/jpeg;base64,'.base64_encode( $result['Picture'] ).'"/>';
+                            ?>
                     </div>
-                    <h2 class="projects__four--title4">Huddle Challenge</h2>
+                    <h2 data-aos="slide-right" data-aos-offset="200" data-aos-delay="100" class="projects__four--title4"><?php echo $result['Title'];?></h2>
 
-                    <div class="projects__four--content4">
-                        <h3 classe="projects__one--title4">Huddle Challenge</h3>
-                        <p>Sit amet consectetur Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, dignissimos. adipisicing elit. Quae ipsam amet iste magnam sunt est labore sit nostrum velit earum!</p>
+                    <div data-aos="fade-down" data-aos-offset="200" data-aos-delay="700" class="projects__four--content4">
+                        <h3 classe="projects__one--title4"><?php echo $result['Title'];?></h3>
+                        <p><?php echo $result['Discription'];?></p>
                         <div class="projects__four--buttons2">
-                            <a href="#">GitHub repo</a>
-                            <a href="#" class="review"><h4>Quick review</h4></a>
+                            <a href="<?php echo $result['Github_link'];?>">GitHub repo</a>
+                            <a href="<?php echo $result['Review_link'];?>" class="review"><h4>Quick review</h4></a>
                         </div>
 
                     </div>
@@ -187,16 +230,22 @@
                 <div class="projects__five">
                     
                     <div class="projects__five--image">
-                        <img src="img/smartmockC2N3.png" alt="">
+                        <!-- <img src="../img/smartmockC2N3.png" alt=""> -->
+                        <?php
+                            $sql = "SELECT * FROM `projects` WHERE `id`='5'";
+                            $sth = $Conn->query($sql);
+                            $result=mysqli_fetch_array($sth);
+                            echo '<img src="data:img/jpeg;base64,'.base64_encode( $result['Picture'] ).'"/>';
+                            ?>
                     </div>
-                    <h2 class="projects__five--title5">Respo Challenge</h2>
+                    <h2 data-aos="slide-right" data-aos-offset="200" data-aos-delay="100" class="projects__five--title5"><?php echo $result['Title'];?></h2>
 
-                    <div class="projects__five--content5">
-                        <h3 classe="projects__one--title">Respo Challenge</h3>
-                        <p>Sit amet consectetur Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, dignissimos. adipisicing elit. Quae ipsam amet iste magnam sunt est labore sit nostrum velit earum!</p>
+                    <div data-aos="fade-down" data-aos-offset="200" data-aos-delay="700" class="projects__five--content5">
+                        <h3 classe="projects__one--title"><?php echo $result['Title'];?></h3>
+                        <p><?php echo $result['Discription'];?></p>
                         <div class="projects__five--buttons2">
-                            <a href="#">GitHub repo</a>
-                            <a href="#" class="review"><h4>Quick review</h4></a>
+                            <a href="<?php echo $result['Github_link'];?>">GitHub repo</a>
+                            <a href="<?php echo $result['Review_link'];?>" class="review"><h4>Quick review</h4></a>
                         </div>
 
                     </div>
@@ -228,10 +277,12 @@
                 <div class="soc"><img src="img/linkedin_icon-icons.com_53609.png" alt=""><a href="https://www.linkedin.com/in/yassine-makhlouk-57359b1a1">Yassine MAKHLOUK</a></div>
             </div>
             <div class="inputs">
-                <input type="text" name="Name" id="name" placeholder="Name">
-                <input type="email" name="email" id="email" placeholder="e-mail">
-                <textarea type="text" name="Message" id="message" placeholder="Message"></textarea>
-                <button type="submit">SEND</button>
+                <form action="controllers/Contact.php" method="post">
+                    <input type="text" name="Name" id="name" placeholder="Name">
+                    <input type="email" name="email" id="email" placeholder="e-mail">
+                    <textarea type="text" name="Message" id="message" placeholder="Message"></textarea>
+                    <button type="submit">SEND</button>
+                </form>
             </div>
 
         </section>
@@ -254,6 +305,11 @@
 
     <script src="javascript/LoginPopp.js"></script>
     <script src="javascript/Menu.js"></script>
+    <script src="javascript/Animation.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
 
 </body>

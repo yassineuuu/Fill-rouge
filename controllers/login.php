@@ -1,8 +1,8 @@
 <?php
     require_once '../models/connection.php';
     session_start();
-    $Email=$_POST['email'];
-    $Password=$_POST['pass'];
+    $Email=mysqli_real_escape_string($Conn,$_POST['email']);
+    $Password=mysqli_real_escape_string($Conn,$_POST['pass']);
 
     // creat SQL query
     $Query="SELECT * FROM login WHERE Email='$Email' && Password= '$Password'";
